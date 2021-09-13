@@ -145,8 +145,10 @@ pyLDAvis.gensim_models는 <strong>코랩</strong>에서 에러가 나서 코랩 
 
 ### ✔ 6주차 | 데모 웹사이트 수정 및 발표 자료 수정
 ##### <span style="color:red">9] 웹페이지</span>
-대시보드 페이지 생성
+대시보드 페이지 생성(감성분석, 화행분석, 토픽모델링)
 - flask
+
+![dashboard](https://user-images.githubusercontent.com/29356103/133049954-1727f903-4524-4a6a-95d9-0593fcb14ce7.png)
 
 
 </br>
