@@ -4,6 +4,11 @@
 <img src="https://img.shields.io/badge/Python-3766AB?style=flat-square&logo=Python&logoColor=white"/> <img src="https://img.shields.io/badge/Flask-26689A?style=flat-square&logo=Flask&logoColor=white"/></br>
 <img src="https://img.shields.io/badge/colab-F9AB00?style=flat-square&logo=Google Colab&logoColor=white"/> <img src="https://img.shields.io/badge/pycham-00A98F?style=flat-square&logo=PyCharm&logoColor=white"/>
 
+**[참고] 깃헙에서 파이참 버전은 웹사이트 구동하는 서비스를 위한 코드이고
+ 코랩버전은 결과까지만 반영한 코드입니다. 
+ 크롤링, 모델링 등 기본 코드는 똑같습니다. 서비스 시연전까지 모든 과정은 코랩에서 진행하였고, 웹페이지 구동을 파이참에서 했기에 이 점이 다릅니다. 
+
+
 
 ## [ Index ]
 1. Description
