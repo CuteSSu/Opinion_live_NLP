@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<!--
+	Strongly Typed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>No Sidebar - Strongly Typed by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}" />
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<section id="header">
+					<div class="container">
+
+
+								<h1 id="logo"><a href="index.html">opinion live</a></h1>
+								<p>온라인 댓글의 화행 분석을 통한 사회적 여론 추정</p>
+								<p><form action="form_recv" method="post">
+									<input type="text" name="keyword" placeholder="사회적 거리두기">
+<!--									<p><input type="submit" value="분석하기" href="left-sidebar.html" ></p>-->
+									<p><a href="{{url_for('base3')}}" class="form-button-submit button">분석하기</a></p>
+                                    <script src="https://code.jquery.com/jquery-1.8.0.js" integrity="sha256-00Fh8tkPAe+EmVaHFpD+HovxWk7b97qwqVi7nLvjdgs=" crossorigin="anonymous"></script> <script type="text/javascript"> $(window).on('load', function () { $("#load").hide(); }); </script> <style type="text/css"> #load { width: 100%; height: 100%; top: 0; left: 0; position: fixed; display: block; opacity: 0.8; background: white; z-index: 99; text-align: center; } #load > img { position: absolute; top: 50%; left: 50%; z-index: 100; } </style> <div id="load"> <img src="{{url_for('static', filename='images/loading.gif')}}" alt="loading"> </div>
+									<script src="https://code.jquery.com/jquery-1.8.0.js" integrity="sha256-00Fh8tkPAe+EmVaHFpD+HovxWk7b97qwqVi7nLvjdgs=" crossorigin="anonymous"></script> <script type="text/javascript"> $(window).on('load', function () { $("#load").hide(); }); </script> <style type="text/css"> #load { width: 100%; height: 100%; top: 0; left: 0; position: fixed; display: block; opacity: 0.8; background: white; z-index: 99; text-align: center; } #load > img { position: absolute; top: 50%; left: 50%; z-index: 100; } </style> <div id="load"> <img src="{{url_for('static', filename='images/loading.gif')}}" alt="loading"> </div>
+
+								</form></p>
+
+
+						<!-- Nav -->
+							<nav id="nav">
+
+							</nav>
+
+					</div>
+				</section>
+
+			<!-- Main -->
+
+				<section id="main">
+					<div class="container">
+						<div id="content">
+
+							<!-- Post -->
+								<article class="box post">
+									<header>
+										<h2></h2>
+									</header>
+								</article>
+
+						</div>
+					</div>
+				</section>
+
+
+			<!-- Footer -->
+				<section id="footer">
+
+					<div id="copyright" class="container">
+						<ul class="links">
+							<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</section>
+
+		</div>
+
+		<!-- Scripts -->l
+<!--		<script src="assets/js/jquery.min.js"></script>-->
+<!--			<script src="assets/js/jquery.dropotron.min.js"></script>-->
+<!--			<script src="assets/js/browser.min.js"></script>-->
+<!--			<script src="assets/js/breakpoints.min.js"></script>-->
+<!--			<script src="assets/js/util.js"></script>-->
+<!--			<script src="assets/js/main.js"></script>-->
+
+			<script>
+				setTimeout(function(){
+				   window.location.href = '{{url_for('base3')}}';
+				}, 2000);
+			</script>
+			<script src="{{ url_for('static', filename='js/jquery.dropotron.min.js' )}}"></script>
+			<script src="{{ url_for('static', filename='js/main.js' )}}"></script>
+			<script src="{{ url_for('static', filename='js/browser.min.js' )}}"></script>
+			<script src="{{ url_for('static', filename='js/breakpoints.min.js' )}}"></script>
+			<script src="{{ url_for('static', filename='js/util.js' )}}"></script>
+			<script src="{{ url_for('static', filename='js/jquery.min.js' )}}"></script>
+
+	</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>화행 분류하기 </title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- 차트 링크 -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+</head>
+<body>
+  <div class="container">
+    <div class="row my-3">
+      <div class="col-12">
+        <h2><strong>'사회적 거리두기'</strong>에서 나타난 댓글의 총 개수는 <strong>{{data3}}개</strong> 입니다.</h2>
+      </div>
+    </div>
+    <div class="row my-2">
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            <canvas id="myChart1"></canvas>
+          </div>
+          <div class="card-footer text-center text-dark">
+            <h3>매체비율</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            <canvas id="myChart2"></canvas>
+          </div>
+          <div class="card-footer text-center text-dark">
+            <h3>긍부정 분석</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <canvas id="myChart"></canvas>
+    <button type="button" class="btn btn-link"></button>
+    <button type="button" class="btn btn-link"></button>
+    <button id="button1" onclick="button1_click();" class="btn btn-light btn-lg">명령</button>
+    <button type="button" class="btn btn-link"></button>
+    <button type="button" class="btn btn-link"></button>
+    <button id="button2" onclick="button2_click();" class="btn btn-light btn-lg">약속</button>
+    <button type="button" class="btn btn-link"></button>
+    <button type="button" class="btn btn-link"></button>
+    <button id="button3" onclick="button3_click();" class="btn btn-light btn-lg">기대</button>
+    <button type="button" class="btn btn-link"></button>
+    <button type="button" class="btn btn-link"></button>
+    <button id="button4" onclick="button4_click();" class="btn btn-light btn-lg">정표</button>
+    <button type="button" class="btn btn-link"></button>
+    <button type="button" class="btn btn-link"></button>
+    <button id="button5" onclick="button5_click();" class="btn btn-light btn-lg">주장</button>
+    <button type="button" class="btn btn-link"></button>
+    <button id="button6" onclick="button6_click();" class="btn btn-light btn-lg">진술</button>
+    <button type="button" class="btn btn-link"></button>
+    <button type="button" class="btn btn-link"></button>
+    <button id="button7" onclick="button7_click();" class="btn btn-light btn-lg">갈등</button>
+    <button type="button" class="btn btn-link"></button>
+    <button type="button" class="btn btn-link"></button>
+    <button id="button8" onclick="button8_click();" class="btn btn-light btn-lg">질문</button>
+<!--    <div>-->
+<!--      <button id="button1" onclick="button1_click();" class="btn btn-link">명령</button>-->
+<!--    </div>-->
+    <p></p>
+    <p></p>
+    <div></div>
+    <div id="headerss"></div>
+  </div>
+
+
+<!--  <div class="container"> <canvas id="myChart"></canvas>-->
+  </div> <!-- 부트스트랩 -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> <!-- 차트 -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+  <script>
+  data = {
+    datasets: [{
+      backgroundColor: ['rgba(255, 63, 63, 0.6)','rgba(43, 213, 86, 0.6)','rgba(70, 180, 255, 0.6)'],
+      data: [50, 25, 25]
+      }],
+      labels: ['유튜브','네이버','다음']
+     };
+    var ctx1 = document.getElementById("myChart1");
+    var myPieChart = new Chart(ctx1, {
+      type: 'doughnut',
+      data: data,
+      options: {}
+     });
+
+  </script>
+  <script>
+  data = {
+    datasets: [{
+      backgroundColor: ['rgba(116, 193, 255, 0.6)','rgba(254, 104, 115, 0.6)'],
+      data: {{ data2 }}
+      }],
+      labels: ['긍정','부정']
+     };
+    var ctx2 = document.getElementById("myChart2");
+    var myDoughnutChart = new Chart(ctx2, {
+      type: 'doughnut',
+      data: data,
+      options: {}
+    });
+
+  </script>
+  <script>
+    var ctx = document.getElementById('myChart');
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['', '', '', '', '', '', '', ''],
+        datasets: [{ label: '화행분류', data: {{ data }},
+        backgroundColor: [
+          'rgba(255, 159, 64, 0.5)',
+          'rgba(255, 159, 64, 0.5)',
+          'rgba(255, 159, 64, 0.5)',
+          'rgba(255, 159, 64, 0.5)',
+          'rgba(255, 159, 64, 0.5)',
+          'rgba(255, 159, 64, 0.5)',
+          'rgba(255, 159, 64, 0.5)',
+          'rgba(255, 159, 64, 0.5)'
+          ],
+        borderColor: [
+          'rgba(255, 159, 64, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(255, 159, 64, 1)'
+         ],
+         borderWidth: 1
+         }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+               }
+            }]
+          }
+        }
+      });
+
+  </script>
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript">
+
+  function button1_click() {
+    $(document).ready( function() {
+    $("#headerss").load("{{url_for('static', filename='LDA_output/명령NUM_30_3.html')}}");
+    });
+  }
+  function button2_click() {
+    $(document).ready( function() {
+    $("#headerss").load("{{url_for('static', filename='LDA_output/약속NUM_30_3.html')}}");
+    });
+  }
+  function button3_click() {
+    $(document).ready( function() {
+    $("#headerss").load("{{url_for('static', filename='LDA_output/기대NUM_30_3.html')}}");
+    });
+  }
+  function button4_click() {
+    $(document).ready( function() {
+    $("#headerss").load("{{url_for('static', filename='LDA_output/정표NUM_30_3.html')}}");
+    });
+  }
+  function button5_click() {
+    $(document).ready( function() {
+    $("#headerss").load("{{url_for('static', filename='LDA_output/주장NUM_30_3.html')}}");
+    });
+  }
+  function button6_click() {
+    $(document).ready( function() {
+    $("#headerss").load("{{url_for('static', filename='LDA_output/진술NUM_30_3.html')}}");
+    });
+  }
+   function button7_click() {
+    $(document).ready( function() {
+    $("#headerss").load("{{url_for('static', filename='LDA_output/갈등NUM_30_3.html')}}");
+    });
+  }
+   function button8_click() {
+    $(document).ready( function() {
+    $("#headerss").load("{{url_for('static', filename='LDA_output/질문NUM_30_3.html')}}");
+    });
+  }
+
+  $(document).ready( function() {
+  $("#headerss").load("{{url_for('static', filename='LDA_output/명령NUM_30_3.html')}}");
+  });
+  </script>
+</script>
+
+</body>
+</html>
